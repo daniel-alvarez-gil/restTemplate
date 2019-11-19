@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class SongController {
 
 
-    @GetMapping("/{id}")
-    public Song show(@PathVariable long id){
+    @GetMapping("/{title}")
+    public Song show(@PathVariable("title") String title){
         double rate = Double.parseDouble(String.format("%.1f", Math.random() * 6 + 4 ));
-        Song song = new Song(id, rate);
+        Song song = new Song(title, rate);
         return song;
     }
 

@@ -1,15 +1,15 @@
 package com.autentia.restTemplate.model;
 
 public class Song {
-    private long id;
+    private String title;
     private double rate;
 
-    public long getId() {
-        return id;
+    public String getId() {
+        return title;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(String title) {
+        this.title = title;
     }
 
     public double getRate() {
@@ -20,8 +20,8 @@ public class Song {
         this.rate = rate;
     }
 
-    public Song(long id, double rate) {
-        this.id = id;
+    public Song(String title, double rate) {
+        this.title = title;
         this.rate = rate;
     }
 }
