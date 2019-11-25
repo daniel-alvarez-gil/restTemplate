@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/apiExternal/v1/songs")
 public class SongController {
@@ -14,9 +13,8 @@ public class SongController {
 
     @GetMapping("/{title}")
     public Song show(@PathVariable("title") String title){
-        double rate = Double.parseDouble(String.format("%.1f", Math.random() * 6 + 4 ));
-        Song song = new Song(title, rate);
-        return song;
+        Double rate = Math.random() * 6 + 4;
+        return new Song(title, Math.floor(rate * 100) / 100);
     }
 
 }
